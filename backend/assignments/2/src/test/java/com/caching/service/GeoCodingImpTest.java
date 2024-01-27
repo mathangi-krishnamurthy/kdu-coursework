@@ -319,7 +319,7 @@ public class GeoCodingImpTest {
     @AfterEach
     @BeforeEach
 
-public void tearDown() throws InterruptedException {
+
 public void tearDown() throws InterruptedException {
 
         cacheManager.getCache("geocoding").clear();
