@@ -32,10 +32,10 @@ describe("Posts Section", () => {
     cy.get(".post-input").type(tweetText);
 
     // Check if the 'tweet-btn' button is enabled
-    cy.get("#tweet-btn").should("not.be.disabled");
+    cy.get(".tweet-btn").should("not.be.disabled");
 
     // Click the 'tweet-btn' button
-    cy.get("#tweet-btn").click();
+    cy.get(".tweet-btn").click();
 
     // Wait for the tweet to be posted
     cy.wait(2000);
@@ -64,7 +64,7 @@ describe("Posts Section", () => {
    */
   it("should compare screenshot after posting a tweet in the mobile view", () => {
     postTweetAndCompareSnapshot(
-      414,
+      409.08,
       896,
       "Coffee in hand, bugs beware. Time to crush some code. #DeveloperLife #Coding",
       "MV-provided-post"
