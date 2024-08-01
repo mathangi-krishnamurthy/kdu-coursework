@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Elements Example</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      text-align: justify;
+    }
+    /* Child selector */
+    body > :not(blockquote) *{
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+    blockquote {
+      background-color: #f8ebea;
+      border-radius: 4px;
+    }
+
+    /* ID selector */
+    #para1{
+      color: red;
+    }
+ 
+    /* Pseudo class */
+    a:hover{
+      color: rgb(213, 50, 194);
+    }
+     /* Usage of class */
+     .main-heading
+    {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      color:blue
+    }
+    /* Descendant selector */
+    ol li {
+        background-color: rgb(244, 205, 205);
+        margin-bottom: 10px;
+    }
+    /* Adjacent sibling selector */
+    h2 + h3{
+        background-color: yellow;
+    }
+    /* General sibling selector */
+    h2 ~ p{
+        background-color: rgb(21, 255, 0);
+    }
+    .btn{
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 20px;
+        background-color: lightblue;
+        border-radius: 20px;
+    }
+    div{
+        margin-top: 20px;
+        height: 400px;
+        width: 100%;
+        border: #150c0c 1px solid;
+    }
+    .div1 {
+  width: 300px;
+  height: 100px;
+  border: 1px solid blue;
+  box-sizing: border-box;
+}
+
+.content-box { 
+  box-sizing: content-box; 
+}
+.padding-box {
+  box-sizing: padding-box; 
+}
+.border-box { 
+  box-sizing: border-box; 
+}
+
+/* Pen Styling, unrelated to box-sizing */
+body { 
+  font-family: sans-serif; 
+}
+.box-sizing-example { 
+  margin: 0 0 1rem 0;
+  padding: 1rem;
+  background: #eee;
+}
+h4 {
+  margin: 0 0 0.5rem 0;
+}
+div[class*="box"] {
+  width: 300px;
+  padding: 20px;
+  background: #444;
+  color: white;
+  border: 10px solid red;
+  background-clip: content-box;
+  text-indent: 20px;
+}
+.image {
+  width: 100px;
+  height: 100px;
+}
+
+  </style>
+</head>
+<body>
+<main>
+    <blockquote><h1>Pre tag:</h1></blockquote>
+    <pre><p>This is website shows different html tags, this is written using the pre tag</p></pre>
+    <section>
+        <blockquote><h1>Header tag:</h1></blockquote>
+        <article>
+            <header>
+                <p id="para1">Posted by Mathangi K</p>
+            <p>Date 4th Feb</p>
+        </header>
+        </article>
+        </section>
+    <section>
+        <blockquote><h1>Heading tags:</h1></blockquote>
+       <!-- Heading Tags -->
+  <h1 class="main-heading">Heading of paragraph using heading tag</h1>
+ 
+        <h2>Subheading:</h2>
+        <h3>Point 1 using h3 tag</h3>
+     
+        <p>Paragraph tag font size is similar to h3 tag. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime harum earum minima voluptas, tempora porro illo odit repudiandae officia doloremque inventore aliquam culpa tenetur facilis est eaque, eligendi rem nobis?</p>
+        <h4>SubPoint 1 using h4 tag</h4>
+        <p>Body of subpoint 1, Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis odio, delectus qui quasi omnis deleniti quod. Quidem corporis alias ab praesentium. Ex dolores veritatis provident numquam magni sit, nam ipsam!</p>
+        <h5>Usage of the h5 tag looks very similar to just using the bold tag. </h5>
+        <h6>H6 tag used here, maybe for caption of images</h6>
+    </section>
+    <!-- Anchor Tags with Different _target Values -->
+    <section>
+        <blockquote><h1>Anchor tags with different target values:</h1></blockquote>
+        <span>
+            <h4>Kickdrum Website( in a new tab ):</h4>
+            <a href="https://www.kickdrum.com/" target="_blank" tabindex="1">Open in new tab</a><br/>
+        </span>
+        <span>
+            <h4>Kickdrum Website( in the same tab ):</h4>
+            <a href="https://www.kickdrum.com/" target="_self" tabindex="2">Click here</a><br/>
+        </span>
+    </section>
+    <!-- Img Tag -->
+    <blockquote><h1>Image tag:</h1></blockquote>
+    <img src="https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630" alt="Random tree image" height="300" width="500">
+    <!-- Ordered List & Unordered List -->
+    <blockquote><h1>Ordered list tag:</h1></blockquote>
+    <ol>
+        <li>First item</li>
+        <li>Second item</li>
+    </ol>
+    <blockquote><h1>Unordered tag:</h1></blockquote>
+    <ul>
+        <li>Unordered item 1</li>
+        <li>Unordered item 2</li>
+    </ul>
+    <!-- Forms -->
+    <blockquote><!-- Heading Tags -->
+        <h1 class="main-heading">Forms tag:</h1>
+       </blockquote>
+    <form>
+        <label>Enter what you feel about KDU</label><br>
+        <textarea></textarea><br>
+        <label for="gender">Gender</label><br>
+        <input type="radio" name="gender" value="male"> Male<br>
+        <input type="radio" name="gender" value="female"> Female<br>
+        <label for="vehicle">Vehicle Type</label><br>
+        <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
+        <input type="checkbox" name="vehicle" value="Car"> I have a car<br>
+        <label for="gender">Which bus would you prefer?</label><br>
+        <select>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+        </select><br>
+        <label for="Password">Enter your password:</label><br>
+        <input type="password" name="Password" placeholder="Password" tabindex="6"><br>
+        <label for="Age">Enter your age:</label><br>
+        <input type="number" name="Age" placeholder="Age"  tabindex="7"><br>
+        <label for="Telephone">Enter your telephone:</label><br>
+        <input type="number" name="Telephone" placeholder="Telephone" tabindex="8"><br>
+        <label for="Search">Enter text to search:</label><br>
+        <input type="search" name="Search" placeholder="Search"><br>
+        <input type="submit" value="Submit" class="btn">
+        <input type="reset" value="Reset" class="btn">
+    </form>
+    <div>
+    <!-- Text Formatting -->
+    <blockquote><h1>Formatting styles that we offer:</h1></blockquote>
+    <p><i>Italic text</i></p>
+    <p><b>Bold text</b></p>
+    <p><sup>Superscript text</sup></p>
+    <p><u>Underlined text</u></p>
+    <p><sub>Subscript text</sub></p>
+    <p><s>Strikethrough text</s></p>
+    <code><p>This is a piece of code.</p></code>
+    </div>
+    <!--Aside content-->
+    <blockquote><h1>Aside tag:</h1></blockquote>
+    <aside>
+        <h4>Office location</h4>
+        <p>#570, 571, 1st Cross Rd, 3rd Block, Santhosapuram, Koramangala 3 Block, Koramangala, Bengaluru, Karnataka 560038</p>
+    </aside>
+    <blockquote><h1>Box sizing tags:</h1></blockquote>
+    <section class="box-sizing-example">
+        <h4>box-sizing: content-box;</h4>
+      <div class="content-box">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, repellat aperiam magnam velit sit porro molestias animi obcaecati excepturi nulla vitae, rem consequuntur quod vero in exercitationem aliquid ratione autem.</p>
+      </div>
+      </section>
+      
+      <section class="box-sizing-example">
+      <h4>box-sizing: padding-box;</h4>
+      <div class="padding-box">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, atque tempora eos odio libero neque! Laudantium perferendis quibusdam fuga recusandae atque, necessitatibus officiis cupiditate! Aliquam eos neque necessitatibus deserunt natus!</p>
+      </div>
+      </section>
+        
+      <section class="box-sizing-example">  
+      <h4>box-sizing: border-box;</h4>
+      <div class="border-box">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi aspernatur, iure temporibus magni cumque quis voluptate alias in at commodi quia dolorem facere eius corporis natus corrupti omnis nostrum beatae.</p>
+      </div>
+      </section>
+
+
+    <!--Navigation content-->
+    <blockquote><h1>Nav tag:</h1></blockquote>
+    <nav>
+        <a href="/project1/" tabindex="3">Project1</a> |
+        <a href="/project2/" tabindex="4">Project2</a>
+    </nav>
+    <!--Footer content-->
+    <blockquote><h1>Footer tag:</h1></blockquote>
+    <footer>
+        <p>For feedback or questions, please contact:</p>
+        <p><a href="mailto:mathangi@feedback.com" tabindex="5">mathangi@feedback.com</a></p>
+    </footer>
+</main>
+</body>
+</html>
