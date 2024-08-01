@@ -1,0 +1,18 @@
+.primary-container 
+{
+    background-color: rgb(159, 218, 255);
+    padding: 30px;
+    padding-bottom: 60px;
+    width: 40%;
+    height: 50vh;
+}
+li 
+{
+    list-style-type: none;
+    color:green
+}
+ul 
+{
+    margin: 0;
+    padding: 0;
+}
