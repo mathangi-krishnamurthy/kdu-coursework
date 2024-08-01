@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chat using web sockets</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class = "heading"> <h1>KDU Chat</h1></div>
+    <div class = "send-container">
+    <input type = "text" id ="msgInput" placeholder="Enter ur message">
+    <button id="sendMessage">↑</button>
+</div>
+    <div id = "messages"></div>
+    <script src="https://cdn.socket.io/4.7.4/socket.io.min.js" integrity="sha384-Gr6Lu2Ajx28mzwyVR8CFkULdCU7kMlZ9UthllibdOSo6qAiN+yXNHqtgdTvFXMT4" crossorigin="anonymous"></script>
+
+    <script>
+        const messageInput = document.getElementById('msgInput');
+        const sendButton = document.getElementById('sendMessage');
+        const messageOutput = document.getElementById("messages");
+
+        function addMessage(from,message){
+            const div = document.createElement('div');
+            div.style.display='flex';
+            div.style.justifyContent='flex-start';
+            div.style.marginBottom='10px';
+            const div2 = document.createElement('div');
+            div2.style.color='black';
+            div2.style.padding='10px';
+            div2.style.paddingRight='13px';
+            div2.style.paddingLeft='13px';
+           
+            div2.style.fontSize='20px';
+            const element = document.createElement('div');
+            div2.style.borderRadius='50%';
+            if(from == "You")
+            {
+            div2.style.backgroundColor='#00bbff';
+            div2.textContent='Y';
+            element.style.backgroundColor='white';
+
+            }
+            else 
+            {
+                div2.style.backgroundColor='#a5bcf7';
+                div2.textContent='U';
+                element.style.backgroundColor='aliceblue';
+
+            }
+
+            div.appendChild(div2);
+            
+            element.style.padding='10px';
+            element.style.width='70%';
+            element.style.borderRadius='10px';
+            element.style.border='1px solid #ccc';
+            element.style.marginLeft='10px';
+            element.innerText =message;
+
+            div.appendChild(element);
+            messageOutput.appendChild(div);
+            
+          messageInput.value='';
+        }
+        const socket = io('http://localhost:3000')
+
+        sendButton.addEventListener("click",()=> {
+            const message = messageInput.value;
+            socket.emit("message",message);
+            addMessage("You",message);
+        })
+       socket.on("new-message",(message)=> {
+           addMessage("User",message);
+       })
+
+     
+
+    </script>
+</body>
+</html>
